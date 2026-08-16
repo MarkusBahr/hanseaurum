@@ -42,12 +42,14 @@ export default function Leistungen() {
             </button>
           ))}
         </div>
-        <div className="leist-hero">
-          <img src={s.img} alt={s.title} className="leist-hero__img" />
-          <div className="leist-hero__overlay">
+        <div className="var-c-content">
+          <div className="var-c-content__img">
+            <img src={s.img} alt={s.title} />
+          </div>
+          <div className="var-c-content__text">
             <h3>{s.title}</h3>
             <p>{s.text}</p>
-            <a href={s.link} className="link-btn light">Mehr erfahren &gt;</a>
+            <a href={s.link} className="link-btn">Mehr erfahren &gt;</a>
           </div>
         </div>
       </div>
