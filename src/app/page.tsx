@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
 import Leistungen from "@/components/Leistungen";
-import Immobilien from "@/components/Immobilien";
+import AboutUs from "@/components/AboutUs";
+import Referenzprojekte from "@/components/Referenzprojekte";
 import Kontakt from "@/components/Kontakt";
 import Footer from "@/components/Footer";
 
@@ -11,9 +11,9 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <AboutUs />
       <Leistungen />
-      <Immobilien />
+      <AboutUs />
+      <Referenzprojekte />
       <Kontakt />
       <Footer />
     </>
