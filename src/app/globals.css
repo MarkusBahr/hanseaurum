@@ -456,6 +456,30 @@ a {
   margin-bottom: 1.5rem;
 }
 
+.var-c-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.var-c-details li {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.var-c-details li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 /* Active variant button */
 .active-var {
   background: var(--color-primary) !important;
