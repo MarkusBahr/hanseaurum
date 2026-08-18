@@ -1,11 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-
-interface Angebot {
-  id: number; title: string; subtitle: string; description: string;
-  address: string; price: string; size: string; rooms: string;
-  features: string[]; images: string[]; status: string;
-}
+import type { Angebot } from "@/types/angebot";
 
 export default function AngeboteList() {
   const [items, setItems] = useState<Angebot[]>([]);
@@ -35,8 +30,10 @@ export default function AngeboteList() {
             <h3>{item.title}</h3>
             {item.subtitle && <p className="angebot-subtitle">{item.subtitle}</p>}
             <div className="angebot-details">
+              {item.objekttyp && <span>{item.objekttyp}</span>}
               {item.size && <span>{item.size}</span>}
               {item.rooms && <span>{item.rooms} Zimmer</span>}
+              {item.baujahr && <span>Bj. {item.baujahr}</span>}
               {item.address && <span>{item.address}</span>}
             </div>
             {item.price && <p className="angebot-price">{item.price}</p>}
