@@ -27,6 +27,15 @@ export default async function getDb(): Promise<Database> {
       price TEXT,
       size TEXT,
       rooms TEXT,
+      objekttyp TEXT,
+      baujahr TEXT,
+      baederanzahl TEXT,
+      hausgeld TEXT,
+      provisionsfrei INTEGER DEFAULT 0,
+      uebergabe TEXT,
+      lage TEXT,
+      energieausweis TEXT,
+      raumaufteilung TEXT,
       features TEXT,
       images TEXT,
       status TEXT DEFAULT 'active',
@@ -34,6 +43,26 @@ export default async function getDb(): Promise<Database> {
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
   `);
+
+  // Migrate existing databases: add new columns if they don't exist
+  const newColumns = [
+    "objekttyp TEXT",
+    "baujahr TEXT",
+    "baederanzahl TEXT",
+    "hausgeld TEXT",
+    "provisionsfrei INTEGER DEFAULT 0",
+    "uebergabe TEXT",
+    "lage TEXT",
+    "energieausweis TEXT",
+    "raumaufteilung TEXT",
+  ];
+  for (const col of newColumns) {
+    try {
+      db.run(`ALTER TABLE angebote ADD COLUMN ${col}`);
+    } catch {
+      // Column already exists
+    }
+  }
 
   db.run(`
     CREATE TABLE IF NOT EXISTS referenzprojekte (
