@@ -7,28 +7,21 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isSetup, setIsSetup] = useState(false);
+  
 
-  useEffect(() => {
-    fetch("/api/auth/setup", { method: "GET" }).catch(() => {});
-  }, []);
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    const endpoint = isSetup ? "/api/auth/setup" : "/api/auth/login";
+    const endpoint = "/api/auth/login";
     const res = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     });
     if (res.ok) {
-      if (isSetup) {
-        setIsSetup(false);
-        setError("Admin erstellt! Bitte jetzt einloggen.");
-      } else {
-        onLogin();
-      }
+      onLogin();
     } else {
       const data = await res.json();
       setError(data.error || "Fehler");
@@ -42,10 +35,8 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
         {error && <p className="admin-error">{error}</p>}
         <input type="text" placeholder="Benutzername" value={username} onChange={e => setUsername(e.target.value)} required />
         <input type="password" placeholder="Passwort" value={password} onChange={e => setPassword(e.target.value)} required />
-        <button type="submit">{isSetup ? "Admin erstellen" : "Einloggen"}</button>
-        <p className="admin-setup-link" onClick={() => setIsSetup(!isSetup)}>
-          {isSetup ? "Zum Login" : "Erstmalig? Admin-Account erstellen"}
-        </p>
+        <button type="submit">Einloggen</button>
+        
       </form>
     </div>
   );
@@ -58,7 +49,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
 
   useEffect(() => {
-    fetch("/api/angebote").then(r => {
+    fetch("/api/auth/check").then(r => {
       if (r.ok) setAuthed(true);
       setChecking(false);
     }).catch(() => setChecking(false));

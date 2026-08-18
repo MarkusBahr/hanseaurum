@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const services = [
   {
@@ -61,6 +61,7 @@ const services = [
 
 export default function Leistungen() {
   const [active, setActive] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
   const s = services[active];
 
   return (
@@ -76,12 +77,15 @@ export default function Leistungen() {
           <p className="leistungen-intro__claim">Wir denken Immobilien neu.</p>
         </div>
 
-        <div className="var-c-tabs">
+        <div className="var-c-tabs" ref={contentRef} style={{ scrollMarginTop: "100px" }}>
           {services.map((srv, i) => (
             <button
               key={srv.title}
               className={"var-c-tab" + (i === active ? " var-c-tab--active" : "")}
-              onClick={() => setActive(i)}
+              onClick={() => {
+                setActive(i);
+                setTimeout(() => contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+              }}
             >
               {srv.title}
             </button>

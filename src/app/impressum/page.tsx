@@ -17,7 +17,7 @@ export default function Impressum() {
             <p><strong>Vertreten durch:</strong><br />Jonathan Schill und Eugen Jauk</p>
 
             <h3>Kontakt</h3>
-            <p>Telefon: <a href="tel:004940607746611">+49 (0)40 6077 46 611</a><br />E-Mail: <a href="mailto:info@hanseaurum.de">info@hanseaurum.de</a></p>
+            <p>Telefon: <a href="tel:+4940607746611">+49 (0)40 6077 46 611</a><br />E-Mail: <a href="mailto:info@hanseaurum.de">info@hanseaurum.de</a></p>
 
             <h3>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h3>
             <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>

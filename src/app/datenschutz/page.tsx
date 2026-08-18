@@ -31,7 +31,7 @@ export default function Datenschutz() {
             <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p>
 
             <h3>Hinweis zur verantwortlichen Stelle</h3>
-            <p>J&amp;S Hanse Aurum GmbH<br/>Gayens Weg 12b<br/>22761 Hamburg<br/><br/>Telefon: <a href="tel:004940607746611">+49 (0)40 6077 46 611</a><br/>E-Mail: <a href="mailto:info@hanseaurum.de">info@hanseaurum.de</a></p>
+            <p>J&amp;S Hanse Aurum GmbH<br/>Gayens Weg 12b<br/>22761 Hamburg<br/><br/>Telefon: <a href="tel:+4940607746611">+49 (0)40 6077 46 611</a><br/>E-Mail: <a href="mailto:info@hanseaurum.de">info@hanseaurum.de</a></p>
 
             <h3>Speicherdauer</h3>
             <p>Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt.</p>

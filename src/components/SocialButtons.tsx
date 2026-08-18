@@ -15,7 +15,7 @@ export default function SocialButtons() {
         </svg>
       </a>
       <a
-        href="https://wa.me/004940607746611?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Leistungen."
+        href="https://wa.me/+4940607746611?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Leistungen."
         target="_blank"
         rel="noopener noreferrer"
         className="social-btn whatsapp-button"

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import type { Angebot } from "@/types/angebot";
 
 export default function AngeboteList() {
@@ -19,7 +20,7 @@ export default function AngeboteList() {
   return (
     <div className="angebote-grid">
       {items.map(item => (
-        <div key={item.id} className="angebot-card">
+        <Link href={`/angebote/${item.id}`} key={item.id} className="angebot-card">
           {item.images.length > 0 && (
             <div className="angebot-image">
               <img src={item.images[0]} alt={item.title} />
@@ -37,14 +38,9 @@ export default function AngeboteList() {
               {item.address && <span>{item.address}</span>}
             </div>
             {item.price && <p className="angebot-price">{item.price}</p>}
-            {item.description && <p className="angebot-desc">{item.description}</p>}
-            {item.features.length > 0 && (
-              <ul className="angebot-features">
-                {item.features.map((f, i) => <li key={i}>{f}</li>)}
-              </ul>
-            )}
+            <span className="angebot-more-btn">Mehr erfahren &rarr;</span>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
